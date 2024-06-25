@@ -24,7 +24,7 @@ void Warlock::setTitle(const std::string &title) { this->_title = title;}
 
 void Warlock::introduce() const { std::cout << _name + ": I am " + _name + ", " + _title + "!" << std::endl;}
 
-void	Warlock::learnSpell(const ASpell *spell) {
+void	Warlock::learnSpell(ASpell *spell) {
 	if  (spell) {
 		if (_spells.find(spell->getName()) == _spells.end()) {
 			_spells[spell->getName()] = spell->clone();
@@ -33,13 +33,13 @@ void	Warlock::learnSpell(const ASpell *spell) {
 	}
 }
 
-void	Warlock::forgetSpell(const std::string &spell_name) {
+void	Warlock::forgetSpell(std::string &spell_name) {
 	if (_spells.find(spell_name) != _spells.end()) {
 		_spells.erase(_spells.find(spell_name));
 	}
 }
 
-void	Warlock::launchSpell(const std::string &spell_name, const ATarget &target) {
+void	Warlock::launchSpell(std::string &spell_name, const ATarget &target) {
 	if (_spells.find(spell_name) != _spells.end()) {
 		_spells[spell_name]->launch(target);
 	}

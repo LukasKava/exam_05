@@ -9,6 +9,6 @@ ATarget	&ATarget::operator=(const ATarget &other) { this->_type = other.getType(
 
 std::string ATarget::getType()	const { return (_type);}
 
-void ATarget::getHitBySpell(const ASpell &spell) const { std::cout << _type << " has been " << spell.getEffects() << std::endl; }
+void ATarget::getHitBySpell(const ASpell &spell) const { std::cout << _type << " has been " << spell.getEffects() << "!" << std::endl; }
 
 ATarget::~ATarget() {}
