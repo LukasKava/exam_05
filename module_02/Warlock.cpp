@@ -24,11 +24,11 @@ void	Warlock::learnSpell(ASpell *spell) {
 	_SpellBook.learnSpell(spell);
 }
 
-void	Warlock::forgetSpell(const std::string &spell_name) {
+void	Warlock::forgetSpell(std::string spell_name) {
 	_SpellBook.forgetSpell(spell_name);
 }
 
-void	Warlock::launchSpell(const std::string &spell_name, const ATarget &target) {
+void	Warlock::launchSpell(std::string spell_name, const ATarget &target) {
 	if (_SpellBook.createSpell(spell_name)) {
 		_SpellBook.createSpell(spell_name)->launch(target);
 	}
